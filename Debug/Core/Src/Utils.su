@@ -1,0 +1,15 @@
+../Core/Src/Utils.c:13:10:incrementaDecrementa	24	static
+../Core/Src/Utils.c:38:12:indexOf	32	static
+../Core/Src/Utils.c:58:12:lastIndexOf	32	static
+../Core/Src/Utils.c:81:6:serializer	16	static
+../Core/Src/Utils.c:141:9:charToByte	16	static
+../Core/Src/Utils.c:160:9:charToBool	16	static
+../Core/Src/Utils.c:169:9:isNumber	16	static
+../Core/Src/Utils.c:179:9:map	56	static
+../Core/Src/Utils.c:191:9:make8	24	static
+../Core/Src/Utils.c:219:10:make16	24	static
+../Core/Src/Utils.c:228:10:make32	32	static
+../Core/Src/Utils.c:246:9:bitRead	24	static
+../Core/Src/Utils.c:259:10:bitWrite	16	static
+../Core/Src/Utils.c:273:10:bitSet	16	static
+../Core/Src/Utils.c:279:10:bitReset	16	static
