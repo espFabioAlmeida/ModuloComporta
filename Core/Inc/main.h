@@ -75,6 +75,8 @@ void Error_Handler(void);
 #define IN5_GPIO_Port GPIOC
 #define IN4_Pin GPIO_PIN_3
 #define IN4_GPIO_Port GPIOC
+#define SW_CAL_Pin GPIO_PIN_0
+#define SW_CAL_GPIO_Port GPIOA
 #define RELE1_Pin GPIO_PIN_2
 #define RELE1_GPIO_Port GPIOA
 #define RELE2_Pin GPIO_PIN_3

@@ -56,6 +56,13 @@ uint8_t
 	flagEntradaFimCurso = false,
 	flagEntradaPulso = false;
 
+uint8_t
+	operacao = OPERACAO_HOME;
+
+uint16_t
+	contadorPulsos = 0,
+	quantidadePulsosCalibrado = 30,
+	setpointPulsos = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -134,6 +141,7 @@ int main(void)
   while (1)
   {
 	  entradasDigitais();
+	  controlePosicao();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -436,6 +444,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : SW_CAL_Pin */
+  GPIO_InitStruct.Pin = SW_CAL_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(SW_CAL_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : RELE1_Pin RELE2_Pin LED_COM_Pin LED_CPU_Pin */
   GPIO_InitStruct.Pin = RELE1_Pin|RELE2_Pin|LED_COM_Pin|LED_CPU_Pin;
