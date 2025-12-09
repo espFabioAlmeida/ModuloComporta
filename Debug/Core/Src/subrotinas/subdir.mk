@@ -5,14 +5,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/subrotinas/SubrotinasCAN.c \
 ../Core/Src/subrotinas/SubrotinasControlePosicao.c \
 ../Core/Src/subrotinas/SubrotinasEntradasDigitais.c 
 
 OBJS += \
+./Core/Src/subrotinas/SubrotinasCAN.o \
 ./Core/Src/subrotinas/SubrotinasControlePosicao.o \
 ./Core/Src/subrotinas/SubrotinasEntradasDigitais.o 
 
 C_DEPS += \
+./Core/Src/subrotinas/SubrotinasCAN.d \
 ./Core/Src/subrotinas/SubrotinasControlePosicao.d \
 ./Core/Src/subrotinas/SubrotinasEntradasDigitais.d 
 
@@ -24,7 +27,7 @@ Core/Src/subrotinas/%.o Core/Src/subrotinas/%.su Core/Src/subrotinas/%.cyclo: ..
 clean: clean-Core-2f-Src-2f-subrotinas
 
 clean-Core-2f-Src-2f-subrotinas:
-	-$(RM) ./Core/Src/subrotinas/SubrotinasControlePosicao.cyclo ./Core/Src/subrotinas/SubrotinasControlePosicao.d ./Core/Src/subrotinas/SubrotinasControlePosicao.o ./Core/Src/subrotinas/SubrotinasControlePosicao.su ./Core/Src/subrotinas/SubrotinasEntradasDigitais.cyclo ./Core/Src/subrotinas/SubrotinasEntradasDigitais.d ./Core/Src/subrotinas/SubrotinasEntradasDigitais.o ./Core/Src/subrotinas/SubrotinasEntradasDigitais.su
+	-$(RM) ./Core/Src/subrotinas/SubrotinasCAN.cyclo ./Core/Src/subrotinas/SubrotinasCAN.d ./Core/Src/subrotinas/SubrotinasCAN.o ./Core/Src/subrotinas/SubrotinasCAN.su ./Core/Src/subrotinas/SubrotinasControlePosicao.cyclo ./Core/Src/subrotinas/SubrotinasControlePosicao.d ./Core/Src/subrotinas/SubrotinasControlePosicao.o ./Core/Src/subrotinas/SubrotinasControlePosicao.su ./Core/Src/subrotinas/SubrotinasEntradasDigitais.cyclo ./Core/Src/subrotinas/SubrotinasEntradasDigitais.d ./Core/Src/subrotinas/SubrotinasEntradasDigitais.o ./Core/Src/subrotinas/SubrotinasEntradasDigitais.su
 
 .PHONY: clean-Core-2f-Src-2f-subrotinas
 

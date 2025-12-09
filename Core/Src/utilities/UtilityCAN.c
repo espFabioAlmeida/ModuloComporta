@@ -18,7 +18,7 @@ void recebePacoteCAN() {
 		flagPacoteCAN = false;
 
 		if(canRxHeader.ExtId == CPU_ADDRESS) {
-			//protocoloCANCPU();
+			protocoloCAN();
 			flagLedCOM = true;
 		}
 	}
