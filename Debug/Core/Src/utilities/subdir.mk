@@ -5,14 +5,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/utilities/UtilityCAN.c \
 ../Core/Src/utilities/UtilityEeprom.c \
 ../Core/Src/utilities/UtilityGPIO.c 
 
 OBJS += \
+./Core/Src/utilities/UtilityCAN.o \
 ./Core/Src/utilities/UtilityEeprom.o \
 ./Core/Src/utilities/UtilityGPIO.o 
 
 C_DEPS += \
+./Core/Src/utilities/UtilityCAN.d \
 ./Core/Src/utilities/UtilityEeprom.d \
 ./Core/Src/utilities/UtilityGPIO.d 
 
@@ -24,7 +27,7 @@ Core/Src/utilities/%.o Core/Src/utilities/%.su Core/Src/utilities/%.cyclo: ../Co
 clean: clean-Core-2f-Src-2f-utilities
 
 clean-Core-2f-Src-2f-utilities:
-	-$(RM) ./Core/Src/utilities/UtilityEeprom.cyclo ./Core/Src/utilities/UtilityEeprom.d ./Core/Src/utilities/UtilityEeprom.o ./Core/Src/utilities/UtilityEeprom.su ./Core/Src/utilities/UtilityGPIO.cyclo ./Core/Src/utilities/UtilityGPIO.d ./Core/Src/utilities/UtilityGPIO.o ./Core/Src/utilities/UtilityGPIO.su
+	-$(RM) ./Core/Src/utilities/UtilityCAN.cyclo ./Core/Src/utilities/UtilityCAN.d ./Core/Src/utilities/UtilityCAN.o ./Core/Src/utilities/UtilityCAN.su ./Core/Src/utilities/UtilityEeprom.cyclo ./Core/Src/utilities/UtilityEeprom.d ./Core/Src/utilities/UtilityEeprom.o ./Core/Src/utilities/UtilityEeprom.su ./Core/Src/utilities/UtilityGPIO.cyclo ./Core/Src/utilities/UtilityGPIO.d ./Core/Src/utilities/UtilityGPIO.o ./Core/Src/utilities/UtilityGPIO.su
 
 .PHONY: clean-Core-2f-Src-2f-utilities
 

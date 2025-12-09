@@ -1,0 +1,2 @@
+../Core/Src/utilities/UtilityCAN.c:16:6:recebePacoteCAN	3
+../Core/Src/utilities/UtilityCAN.c:29:6:enviaPacoteCAN	1
