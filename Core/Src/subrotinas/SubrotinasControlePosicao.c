@@ -109,7 +109,8 @@ void controlePosicao() {
 		if(flagEntradaFimCurso) {
 			acionamentoMotor(MOTOR_RECUA);
 			quantidadePulsosCalibrado = contadorPulsos + 1;
-			//TODO: SALVAR
+			salvaQuantidadePulsos();
+			flagLedCPU = true;
 			operacao = OPERACAO_HOME;
 		}
 	}
