@@ -14,23 +14,46 @@ void acionamentoMotor(uint8_t motor) {
 	if(motor == MOTOR_DESLIGADO) {
 		off(RELE1_GPIO_Port, RELE1_Pin);
 		off(RELE2_GPIO_Port, RELE2_Pin);
+		sentidoMotor = MOTOR_DESLIGADO;
 		return;
 	}
 
 	if(motor == MOTOR_AVANCA) {
 		off(RELE2_GPIO_Port, RELE2_Pin);
 		on(RELE1_GPIO_Port, RELE1_Pin);
+		sentidoMotor = MOTOR_AVANCA;
 		return;
 	}
 
 	if(motor == MOTOR_RECUA) {
 		off(RELE1_GPIO_Port, RELE1_Pin);
 		on(RELE2_GPIO_Port, RELE2_Pin);
+		sentidoMotor = MOTOR_RECUA;
 		return;
 	}
 
 	off(RELE1_GPIO_Port, RELE1_Pin);
 	off(RELE2_GPIO_Port, RELE2_Pin);
+	sentidoMotor = MOTOR_DESLIGADO;
+}
+/*=============================================================================
+INTERPRETACAO ENTRADA PULSOS
+==============================================================================*/
+void interpretacaoEntradaPulsos(){
+
+	if(sentidoMotor == MOTOR_AVANCA) {
+		if(contadorPulsos < quantidadePulsosCalibrado) {
+			contadorPulsos ++;
+		}
+		return;
+	}
+
+	if(sentidoMotor == MOTOR_RECUA) {
+		if(contadorPulsos) {
+			contadorPulsos --;
+		}
+		return;
+	}
 }
 /*=============================================================================
 CONTROLE POSICAO
@@ -63,7 +86,7 @@ void controlePosicao() {
 		if(!whileEntradaPulso) {
 			if(flagEntradaPulso) {
 				whileEntradaPulso = true;
-				contadorPulsos ++;
+				interpretacaoEntradaPulsos();
 			}
 		}
 
@@ -102,7 +125,7 @@ void controlePosicao() {
 		if(!whileEntradaPulso) {
 			if(flagEntradaPulso) {
 				whileEntradaPulso = true;
-				contadorPulsos ++;
+				interpretacaoEntradaPulsos();
 			}
 		}
 

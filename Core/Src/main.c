@@ -65,7 +65,9 @@ uint8_t
 
 uint8_t
 	operacao = OPERACAO_HOME,
-	contadorTempoSwCalibracao = 0;
+	contadorTempoSwCalibracao = 0,
+
+	sentidoMotor = MOTOR_DESLIGADO;
 
 uint16_t
 	contadorPulsos = 0,

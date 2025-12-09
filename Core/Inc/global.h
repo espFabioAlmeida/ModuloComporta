@@ -45,7 +45,9 @@ extern uint8_t
 
 extern uint8_t
 	operacao,
-	contadorTempoSwCalibracao;
+	contadorTempoSwCalibracao,
+
+	sentidoMotor;
 
 extern uint16_t
 	contadorPulsos,

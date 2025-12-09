@@ -1,3 +1,4 @@
 ../Core/Src/subrotinas/SubrotinasControlePosicao.c:12:6:acionamentoMotor	4
-../Core/Src/subrotinas/SubrotinasControlePosicao.c:38:6:controlePosicao	19
-../Core/Src/subrotinas/SubrotinasControlePosicao.c:121:6:botaoCalibracao	5
+../Core/Src/subrotinas/SubrotinasControlePosicao.c:42:6:interpretacaoEntradaPulsos	5
+../Core/Src/subrotinas/SubrotinasControlePosicao.c:61:6:controlePosicao	19
+../Core/Src/subrotinas/SubrotinasControlePosicao.c:144:6:botaoCalibracao	5
