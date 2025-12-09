@@ -13,9 +13,6 @@ enum BOOL {
 	true
 };
 
-extern CAN_HandleTypeDef hcan;
-extern I2C_HandleTypeDef hi2c1;
-
 enum OPERACAO {
 	OPERACAO_HOME,
 	OPERACAO_POSICIONA,
@@ -28,13 +25,22 @@ enum MOTOR {
 	MOTOR_AVANCA
 };
 
+#define TEMPO_SW_CALIBRACAO 30
+
+extern CAN_HandleTypeDef hcan;
+extern I2C_HandleTypeDef hi2c1;
+
 extern uint8_t
 	flagEntradaHome,
 	flagEntradaFimCurso,
-	flagEntradaPulso;
+	flagEntradaPulso,
+
+	flagLedCPU,
+	flagLedCOM;
 
 extern uint8_t
-	operacao;
+	operacao,
+	contadorTempoSwCalibracao;
 
 extern uint16_t
 	contadorPulsos,

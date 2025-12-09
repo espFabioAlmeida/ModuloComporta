@@ -30,12 +30,39 @@ TAREFAS 100ms
 void tarefas100ms() {
 	reiniciaWatchDog();
 
+	if(contadorTempoSwCalibracao) {
+		if(contadorTempoSwCalibracao <= TEMPO_SW_CALIBRACAO) {
+			contadorTempoSwCalibracao ++;
+		}
+	}
+
+	if(flagLedCPU) {
+		static uint8_t contaPiscada = 0;
+		toggle(LED_CPU_GPIO_Port, LED_CPU_Pin);
+
+		contaPiscada ++;
+		if(contaPiscada >= 20) {
+			contaPiscada = 0;
+			flagLedCPU = false;
+		}
+	}
+
+	if(flagLedCOM) {
+		flagLedCOM = false;
+		off(LED_COM_GPIO_Port, LED_COM_Pin);
+	}
+	else {
+		on(LED_COM_GPIO_Port, LED_COM_Pin);
+	}
 }
 /*==============================================================================
 TAREFAS 1s
 ==============================================================================*/
 void tarefas1s() {
-	toggle(LED_CPU_GPIO_Port, LED_CPU_Pin);
+	if(!flagLedCPU) {
+		toggle(LED_CPU_GPIO_Port, LED_CPU_Pin);
+	}
+
 
 }
 /*==============================================================================

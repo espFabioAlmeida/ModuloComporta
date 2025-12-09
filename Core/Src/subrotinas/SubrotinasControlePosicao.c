@@ -115,5 +115,24 @@ void controlePosicao() {
 	}
 }
 /*=============================================================================
+BOTAO DE CALIBRACAO
+==============================================================================*/
+void botaoCalibracao() {
+	if(debounce(SW_CAL_GPIO_Port, SW_CAL_Pin)) {
+		contadorTempoSwCalibracao = 1;
+		while(!input(SW_CAL_GPIO_Port, SW_CAL_Pin)) {
+			if(contadorTempoSwCalibracao > TEMPO_SW_CALIBRACAO) {
+				flagLedCPU = true;
+			}
+		}
+	}
+
+	if(contadorTempoSwCalibracao > TEMPO_SW_CALIBRACAO) {
+		operacao = OPERACAO_CALIBRACAO;
+	}
+
+	contadorTempoSwCalibracao = 0;
+}
+/*=============================================================================
 FIM DO ARQUIVO
 ==============================================================================*/

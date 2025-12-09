@@ -54,10 +54,14 @@ TIM_HandleTypeDef htim3;
 uint8_t
 	flagEntradaHome = false,
 	flagEntradaFimCurso = false,
-	flagEntradaPulso = false;
+	flagEntradaPulso = false,
+
+	flagLedCPU = false,
+	flagLedCOM = false;
 
 uint8_t
-	operacao = OPERACAO_HOME;
+	operacao = OPERACAO_HOME,
+	contadorTempoSwCalibracao = 0;
 
 uint16_t
 	contadorPulsos = 0,
@@ -133,6 +137,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim2); //Timer do delay us
   HAL_TIM_Base_Start_IT(&htim3); //Timer do Scheduller
+
+  botaoCalibracao();
 
   /* USER CODE END 2 */
 
