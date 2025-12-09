@@ -7,6 +7,40 @@
 #include "main.h"
 #include "global.h"
 /*==============================================================================
+DEBOUNCE PULSOS
+==============================================================================*/
+uint8_t debouncePulsos(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin) {
+	#ifndef DEBOUNCE_PULSOS
+		#define DEBOUNCE_PULSOS 15
+	#endif
+
+	if(!HAL_GPIO_ReadPin(GPIOx, GPIO_Pin)) {
+		HAL_Delay(DEBOUNCE_PULSOS);
+		if(!HAL_GPIO_ReadPin(GPIOx, GPIO_Pin)) {
+			return true;
+		}
+	}
+
+	return false;
+}
+/*==============================================================================
+DEBOUNCE PULSOS INVERSO
+==============================================================================*/
+uint8_t debouncePulsosInverso(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin) {
+	#ifndef DEBOUNCE_PULSOS
+		#define DEBOUNCE_PULSOS 15
+	#endif
+
+	if(HAL_GPIO_ReadPin(GPIOx, GPIO_Pin)) {
+		HAL_Delay(DEBOUNCE_PULSOS);
+		if(HAL_GPIO_ReadPin(GPIOx, GPIO_Pin)) {
+			return true;
+		}
+	}
+
+	return false;
+}
+/*==============================================================================
 DEBOUNCE
 ==============================================================================*/
 uint8_t debounce(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin) {

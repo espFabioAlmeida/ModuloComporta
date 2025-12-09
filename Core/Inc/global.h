@@ -16,5 +16,9 @@ enum BOOL {
 extern CAN_HandleTypeDef hcan;
 extern I2C_HandleTypeDef hi2c1;
 
+extern uint8_t
+	flagEntradaHome,
+	flagEntradaFimCurso,
+	flagEntradaPulso;
 
 #endif /* INC_GLOBAL_H_ */

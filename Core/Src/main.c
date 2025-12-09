@@ -51,6 +51,11 @@ TIM_HandleTypeDef htim3;
 
 /* USER CODE BEGIN PV */
 
+uint8_t
+	flagEntradaHome = false,
+	flagEntradaFimCurso = false,
+	flagEntradaPulso = false;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -128,6 +133,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  entradasDigitais();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
