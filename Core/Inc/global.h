@@ -13,16 +13,11 @@ enum BOOL {
 	true
 };
 
-enum OPERACAO {
-	OPERACAO_HOME,
-	OPERACAO_POSICIONA,
-	OPERACAO_CALIBRACAO
-};
 
 enum MOTOR {
 	MOTOR_DESLIGADO,
-	MOTOR_RECUA,
-	MOTOR_AVANCA
+	MOTOR_FECHAR,
+	MOTOR_ABRIR
 };
 
 #define TEMPO_SW_CALIBRACAO 30
@@ -36,23 +31,13 @@ extern CAN_RxHeaderTypeDef	canRxHeader;
 extern uint8_t
 	flagPacoteCAN,
 
-	flagEntradaHome,
-	flagEntradaFimCurso,
-	flagEntradaPulso,
+	flagEntradaFimCursoAbrir,
+	flagEntradaFimCursoFechar,
 
-	flagLedCPU,
 	flagLedCOM;
 
 extern uint8_t
-	operacao,
-	contadorTempoSwCalibracao,
-
 	sentidoMotor;
-
-extern uint16_t
-	contadorPulsos,
-	quantidadePulsosCalibrado,
-	setpointPulsos;
 
 extern uint32_t
 	canTxMailbox;

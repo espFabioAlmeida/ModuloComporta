@@ -9,7 +9,9 @@
 /*==============================================================================
 CONSTANTES
 ==============================================================================*/
-const uint32_t CPU_ADDRESS = 0x1D57683D;
+const uint32_t ECU_VLV_ADDRESS_PACK1 = 0x1BB81A01;
+const uint32_t ECU_VLV_ADDRESS_PACK2 = 0x1BB81A02;
+const uint32_t ECU_VLV_ADDRESS_PACK3 = 0x1BB81A03;
 /*==============================================================================
 RECEBE PACOTE CAN
 ==============================================================================*/
@@ -17,7 +19,7 @@ void recebePacoteCAN() {
 	if(flagPacoteCAN) {
 		flagPacoteCAN = false;
 
-		if(canRxHeader.ExtId == CPU_ADDRESS) {
+		if(canRxHeader.ExtId == ECU_VLV_ADDRESS_PACK3) {
 			protocoloCAN();
 			flagLedCOM = true;
 		}
@@ -27,21 +29,7 @@ void recebePacoteCAN() {
 ENVIA PACOTE CAN
 ==============================================================================*/
 void enviaPacoteCAN() {
-	//Por enquanto não há dados a serem transmitidos pela CAN
-	/*
-	canTxHeader.ExtId = HIDRA_ADDRESS;
-	canTxHeader.RTR = CAN_RTR_DATA;
-	canTxHeader.IDE = CAN_ID_EXT;
-	canTxHeader.DLC = 8;
-	canTxHeader.TransmitGlobalTime = DISABLE;
 
-	if(HAL_CAN_AddTxMessage(&hcan, &canTxHeader, canTxBuffer, &canTxMailbox) != HAL_OK) {
-	    Error_Handler();
-	}
-
-	while(HAL_CAN_GetTxMailboxesFreeLevel(&hcan) != 3) {
-		//Aguarda fim da transmissão
-	}*/
 }
 /*==============================================================================
 FIM DO ARQUIVO

@@ -1,7 +1,0 @@
-../Core/Src/utilities/UtilityEeprom.c:31:6:writeExternalEeprom	40	static
-../Core/Src/utilities/UtilityEeprom.c:83:9:readExternalEeprom	40	static
-../Core/Src/utilities/UtilityEeprom.c:139:6:salvaQuantidadePulsos	8	static
-../Core/Src/utilities/UtilityEeprom.c:146:6:writeAllEeprom	8	static
-../Core/Src/utilities/UtilityEeprom.c:152:6:readEeprom	16	static
-../Core/Src/utilities/UtilityEeprom.c:160:6:apagaEeprom	8	static
-../Core/Src/utilities/UtilityEeprom.c:171:6:verificaEeprom	8	static

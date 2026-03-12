@@ -1,2 +1,2 @@
-../Core/Src/utilities/UtilityCAN.c:16:6:recebePacoteCAN	8	static
-../Core/Src/utilities/UtilityCAN.c:29:6:enviaPacoteCAN	8	static
+../Core/Src/utilities/UtilityCAN.c:18:6:recebePacoteCAN	8	static
+../Core/Src/utilities/UtilityCAN.c:31:6:enviaPacoteCAN	8	static
